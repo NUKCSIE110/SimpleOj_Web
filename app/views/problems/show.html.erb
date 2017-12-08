@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-2">
+        <h1>#<%= @id %></h1>
+    </div>
+    <div class="col-md-8 text-center">
+        <h1><%= @problem.title %></h1>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-offset-9 col-md-3 text-center">
+        <a href="#">解題紀錄</a>&nbsp;&nbsp;
+        <a href="#">提問</a>
+    </div>
+</div>
+</h1>
+<%= @problem.text %>
+<hr>
+<div class="row">
+    <div class="col-md-2 col-md-offset-5">
+        <button type="button" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+</div>
