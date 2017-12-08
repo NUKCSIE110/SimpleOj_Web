@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleOj</title>
+    <title>高大資工Online Judge</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,7 @@
 
   <body>
   <div class="container-fluid">
+    <%= render "common/navbar" unless @disable_nav %>
     <%= yield %>
   </div>
   <%= render "common/footer" %>
