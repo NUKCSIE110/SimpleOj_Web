@@ -1,0 +1,17 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-4 text-right">
+        <h3>第&nbsp;<%= @question.qid %>&nbsp;題</h3>
+    </div>
+    <div class="col-md-4 text-center">
+        <h3><%= @question.created_at %></h3>
+    </div>
+</div>
+<hr>
+<%= simple_format(@question.text) %>
+<hr>
+<% if @question.asked %>
+    <p class="text-success">已回覆</p>
+    <%= simple_format(@question.response) %>
+<% else %>
+    <p class="text-warning">未回覆</p>
+<% end %>

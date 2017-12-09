@@ -1,0 +1,30 @@
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">題號</th>
+            <th scope="col" class="text-center">時間</th>
+            <th scope="col">問題狀態</th>
+        </tr>
+    </thead>
+    <tbody>
+         <% @questions.each_with_index do |question, index| %>
+             <tr>
+                <td><%= question.qid %></td>
+                <td class="text-center">
+                    <a href="<%= question_path(question) %>">
+                        <%= question.created_at %>
+                    </a>
+                </td>
+                 <td class="col-md-offset-9 col-md-3">
+                     <strong>
+                    <% if question.asked %>
+                        <p class="text-success">已回覆</p>
+                    <% else %>
+                        <p class="text-warning">未回覆</p>
+                    <% end %>
+                    </strong>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -12,18 +12,18 @@
             </span>
             <ul class="nav navbar-nav">
                 <li>
-                    <%= link_to("題目", '/problems') %>
+                    <%= link_to("題目", problems_path) %>
                 </li>
                 <li>
-                    <%= link_to("記分板", '/scoreboard') %>
+                    <%= link_to("記分板", scoreboard_show_path) %>
                 </li>
                 <li>
-                    <%= link_to("提問", '/question') %>
+                    <%= link_to("提問", question_index_path) %>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <%= link_to("登出", '/logout') %>
+                    <%= link_to("登出", user_logout_path) %>
                 </li>
             </ul>
         </div>

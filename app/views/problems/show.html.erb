@@ -9,15 +9,15 @@
 <hr>
 <div class="row">
     <div class="col-md-offset-9 col-md-3 text-center">
-        <a href="#">解題紀錄</a>&nbsp;&nbsp;
-        <a href="#">提問</a>
+        <%= link_to("解題紀錄", submission_path(@id)) %>&nbsp;&nbsp;
+        <%= link_to("提問", new_question_path(id:@id)) %>
     </div>
 </div>
-</h1>
-<%= @problem.text %>
+<br>
+<%=  simple_format(@problem.text) %>
 <hr>
 <div class="row">
     <div class="col-md-2 col-md-offset-5">
-        <button type="button" class="btn btn-primary btn-lg">Submit</button>
+        <%= link_to("Submit", new_submission_path(id:@id), class:"btn btn-primary btn-lg") %>
     </div>
 </div>

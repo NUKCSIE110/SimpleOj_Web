@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qid: 1
+  text: MyText
+  asked: false
+  response: MyText
+
+two:
+  qid: 1
+  text: MyText
+  asked: false
+  response: MyText
