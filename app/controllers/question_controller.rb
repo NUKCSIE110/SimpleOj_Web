@@ -5,7 +5,7 @@ class QuestionController < ApplicationController
     @qid ||= 1
   end
   def index
-    @questions = Question.where("user=?", current_user.sid)
+    @questions = Question.where("user=?", current_user.sid).order('created_at DESC')
   end
   def show
     @question = Question.find(params[:id])
