@@ -7,7 +7,10 @@ class SubmissionController < ApplicationController
     @qid ||= 1
   end
   def create
-    @uuid = Digest::MD5.hexdigest(params[:submission][:code])
+    if game_over?
+      return
+    end
+    @uuid = Digest::MD5.hexdigest(params[:submission][:code]+@current_user.sid)
     if Submission.where("uuid=?", @uuid).first.nil?
       @qid = params[:submission][:qid]
       @submission = Submission.new(params[:submission].permit(:qid, :code, :lang))
