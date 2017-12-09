@@ -7,13 +7,18 @@ class SessionsController < ApplicationController
   end
   def create
     @disable_nav = true
-    user = User.find_by(sid: params[:session][:sid].downcase)
-    if user && user.password == params[:session][:password]
-      log_in user
+    if game_over?
+      flash[:alert] = '比賽已經結束'
       redirect_to root_path
     else
-      flash[:alert] = '帳號/密碼錯誤，或是你沒有報名'
-      render 'new'
+      user = User.find_by(sid: params[:session][:sid].downcase)
+      if user && user.password == params[:session][:password]
+        log_in user
+        redirect_to root_path
+      else
+        flash[:alert] = '帳號/密碼錯誤，或是你沒有報名'
+        render 'new'
+      end
     end
   end
   def destroy

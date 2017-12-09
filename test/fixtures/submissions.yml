@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qid: 1
+  code: MyText
+  type: 1
+  judged: false
+  uuid: MyString
+  result: MyString
+  user: MyString
+
+two:
+  qid: 1
+  code: MyText
+  type: 1
+  judged: false
+  uuid: MyString
+  result: MyString
+  user: MyString

@@ -8,7 +8,11 @@
     </thead>
     <tbody>
          <% @problems.each_with_index do |problem, index| %>
-             <tr class="clickable-row" data-href="<%= problem_path(problem)%>">
+            <% if @status[index] == "AC"  %>
+                <tr class="bg-success">
+            <%else%>
+                <tr>
+            <%end%>
                 <td><%= index+1 %></td>
                 <td>
                     <a href="<%= problem_path(problem) %>">
@@ -19,6 +23,8 @@
                      <strong>
                     <% if @status[index] == "AC"  %>
                         <p class="text-success">AC</p>
+                        <% elsif @status[index].nil? %>
+                        --
                     <% else %>
                         <%= @status[index]%>
                     <% end %>

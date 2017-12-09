@@ -1,0 +1,37 @@
+<h1>#<%= @qid %></h1>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col" class="text-center">Submission-id</th>
+            <th scope="col" class="text-center">時間</th>
+            <th scope="col" class="text-center">評測狀態</th>
+        </tr>
+    </thead>
+    <tbody>
+         <% @submissions.each do |submission| %>
+            <% if submission.judged && submission.result=="AC" %>
+                <tr class="bg-success">
+            <%elsif submission.judged%>
+                <tr class="bg-danger">
+            <%else%>
+                <tr>
+            <%end%>
+                <td class="text-center col-md-4">
+                    <%= submission.uuid[0,7] %>
+                </td>
+                <td class="text-center col-md-4">
+                    <%= submission.updated_at %>
+                </td>
+                <td class="text-center col-md-4">
+                     <strong>
+                        <% if submission.judged? %>
+                            <%= submission.result %>
+                        <%else%>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i>Judging....
+                        <%end%>
+                    </strong>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

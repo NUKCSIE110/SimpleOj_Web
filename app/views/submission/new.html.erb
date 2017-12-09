@@ -1,0 +1,23 @@
+<%= form_with scope: :submission, url: submission_index_path, local: true do |form| %>
+    <div class="row">
+        <div class="form-group col-md-2">
+            <%= form.label(:qid, "題號" )%><br>
+            <%= form.collection_select(:qid, Problem.all, :id, :id, {:prompt=>true,:selected=>@qid}, {:class => 'form-control'} ) %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= form.label(:code, "Code") %><br>
+        <%= form.text_area(:code, rows:15, class:"form-control") %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label(:lang, "使用語言 (不知道就選C)") %><br>
+        <%= form.select(:lang, [["C (GNU-GCC 7.2.0, gcc -02 -std=c11 -static)", 0],["C++ (GNU-GCC 7.2.0, g++ -O2 -std=c++11 -static)", 1]],{},{:class=>"form-control"}) %>
+    </div>
+
+    <div class="form-group">
+        <%= form.submit("Submit", class:"btn btn-primary") %>
+    </p>
+<% end %>
+

@@ -21,7 +21,7 @@ function updateTime(){
     console.log(t.getTime());
     $("#timeLeft").text(strTimeLeft);
   }else{
-    $("#timeLeft").text("00:00:00");
+    $("#timeLeft").text("00:00:00 GAMEOVER!!");
     $("#timeLeft").addClass("text-danger");
   }
 }

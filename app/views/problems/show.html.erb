@@ -14,7 +14,7 @@
     </div>
 </div>
 <br>
-<%=  simple_format(@problem.text) %>
+<%=  simple_format(@problem.text, {}, sanitize: false) %>
 <hr>
 <div class="row">
     <div class="col-md-2 col-md-offset-5">
