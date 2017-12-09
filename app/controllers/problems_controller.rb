@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  before_action :require_login
   def index
     @problems = Problem.all
     @status = ["AC", "WA", "AC"]

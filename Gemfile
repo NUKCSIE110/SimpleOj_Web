@@ -56,3 +56,4 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem "jquery-rails"
 gem 'turbolinks', '~>5'
+gem 'devise'

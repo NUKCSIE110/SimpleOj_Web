@@ -2,8 +2,8 @@
     <div class="col-md-4 text-right">
         <h3>第&nbsp;<%= @question.qid %>&nbsp;題</h3>
     </div>
-    <div class="col-md-4 text-center">
-        <h3><%= @question.created_at %></h3>
+    <div class="col-md-5 text-center">
+        <h3><%= @question.created_at.in_time_zone %></h3>
     </div>
 </div>
 <hr>

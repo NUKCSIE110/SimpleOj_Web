@@ -15,15 +15,20 @@
                     <%= link_to("題目", problems_path) %>
                 </li>
                 <li>
-                    <%= link_to("記分板", scoreboard_show_path) %>
+                    <%= link_to("記分板", scoreboard_path) %>
                 </li>
                 <li>
                     <%= link_to("提問", question_index_path) %>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <span class="navbar-text">
+                    <% if logged_in? %>
+                        <%= current_user.sid.upcase %>
+                    <%end%>
+                </span>
                 <li>
-                    <%= link_to("登出", user_logout_path) %>
+                    <%= link_to("登出", logout_path, method: :delete) %>
                 </li>
             </ul>
         </div>

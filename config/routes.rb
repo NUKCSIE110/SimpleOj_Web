@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'user/login'
-  get 'user/logout'
-  get 'scoreboard/show'
-  get 'time/get'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  get '/scoreboard', to: 'scoreboard#show'
+  get '/time',       to: 'time#get'
   resources:problems
   resources:question
   resources:submission
