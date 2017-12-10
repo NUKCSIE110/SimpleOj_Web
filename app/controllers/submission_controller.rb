@@ -11,6 +11,13 @@ class SubmissionController < ApplicationController
       return
     end
     @uuid = Digest::MD5.hexdigest(params[:submission][:code]+@current_user.sid)
+    if !Submission.where("judged=? AND user=?", false, @current_user.sid).first.nil?
+      flash[:alert] = "您還有其他程式碼評測中，請稍後再試"
+      @qid = params[:id]
+      @qid ||= 1
+      render 'new'
+      return
+    end
     if Submission.where("uuid=?", @uuid).first.nil?
       @qid = params[:submission][:qid]
       @submission = Submission.new(params[:submission].permit(:qid, :code, :lang))
