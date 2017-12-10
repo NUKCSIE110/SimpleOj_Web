@@ -10,7 +10,8 @@ class SubmissionController < ApplicationController
     if game_over?
       return
     end
-    @uuid = Digest::MD5.hexdigest(params[:submission][:code]+@current_user.sid)
+    @payload = params[:submission][:code]+@current_user.sid+params[:submission][:lang]
+    @uuid = Digest::MD5.hexdigest(@payload)
     if !Submission.where("judged=? AND user=?", false, @current_user.sid).first.nil?
       flash[:alert] = "您還有其他程式碼評測中，請稍後再試"
       @qid = params[:id]
