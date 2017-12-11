@@ -1,5 +1,6 @@
 <table class="table">
     <thead>
+        <th style="width:1%;"><i class="fa fa-hashtag" aria-hidden="true"></i></th>
         <th class="col-md-2 text-center">User</th>
         <% for i in 1..@problems %>
             <th class="text-center">#<%= i %></th>
@@ -7,12 +8,9 @@
         <th class="col-md-1">Score</th>
     </thead>
     <tbody>
-        <% @users.each do |user| %>
-            <%if user['sid'] == @current_user.sid %>
-                <tr class="bg-info">
-            <%else%>
-                <tr>
-            <%end%>
+        <% @users.each_with_index do |user, i| %>
+            <%= tag(:tr, :class=> user['sid']==@current_user.sid ? "bg-info" : '') %>
+                <td><%= i+1 %></td>
                 <td class="text-center">
                     <%= user['sid'].upcase%>
                 </td>

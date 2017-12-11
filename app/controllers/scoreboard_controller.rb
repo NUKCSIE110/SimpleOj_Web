@@ -1,6 +1,8 @@
 class ScoreboardController < ApplicationController
   before_action :require_login
   def show
+    #render 'close'
+    #return
     @problems = Problem.count
     $raw_users = User.all
     @users = Array.new
