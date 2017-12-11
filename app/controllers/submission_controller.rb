@@ -1,7 +1,7 @@
+require 'digest/md5'
+require 'net/http'
 class SubmissionController < ApplicationController
   before_action :require_login
-  require 'digest/md5'
-  require 'net/http'
   def new
     @qid = params[:id]
     @qid ||= 1
@@ -43,5 +43,6 @@ class SubmissionController < ApplicationController
   def show
     @qid = params[:id]
     @submissions = Submission.where("user=? AND qid=?", @current_user.sid, @qid).order('created_at DESC')
+    @refresh = @submissions.select {|e| e.judged==false}.first
   end
 end

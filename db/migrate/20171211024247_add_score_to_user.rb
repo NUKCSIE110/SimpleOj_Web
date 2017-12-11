@@ -1,0 +1,6 @@
+class AddScoreToUser < ActiveRecord::Migration[5.1]
+  def change
+    add_column :users, :ac, :integer
+    add_column :users, :score, :integer
+  end
+end

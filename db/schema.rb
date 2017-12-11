@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171209092416) do
+ActiveRecord::Schema.define(version: 20171211024247) do
 
   create_table "problems", force: :cascade do |t|
     t.string "title"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20171209092416) do
   create_table "submissions", force: :cascade do |t|
     t.integer "qid"
     t.text "code"
-    t.integer "type"
+    t.integer "lang"
     t.boolean "judged"
     t.string "uuid"
     t.string "result"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20171209092416) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "ac"
+    t.integer "score"
   end
 
 end

@@ -1,6 +1,10 @@
 class ProblemsController < ApplicationController
   before_action :require_login
   def index
+    if false
+      render 'close'
+      return
+    end
     @problems = Problem.all
     @status = [];
     for i in 0..4
@@ -15,6 +19,10 @@ class ProblemsController < ApplicationController
   end
 
   def show
+    if false
+      render 'close'
+      return
+    end
     @id = params[:id]
     @problem = Problem.find(@id)
   end
