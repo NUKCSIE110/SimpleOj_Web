@@ -8,7 +8,11 @@
     </thead>
     <tbody>
         <% @users.each do |user| %>
-            <tr>
+            <%if user['sid'] == @current_user.sid %>
+                <tr class="bg-info">
+            <%else%>
+                <tr>
+            <%end%>
                 <td class="text-center">
                     <%= user['sid'].upcase%>
                 </td>

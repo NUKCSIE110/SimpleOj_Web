@@ -19,6 +19,7 @@ function updateTime(){
     strTimeLeft += ("0"+t.getUTCMinutes()).slice(-2) + ':';
     strTimeLeft += ("0"+t.getUTCSeconds()).slice(-2);
     console.log(t.getTime());
+    $("#timeLeft").removeClass();
     $("#timeLeft").text(strTimeLeft);
   }else{
     $("#timeLeft").text("00:00:00 GAMEOVER!!");
