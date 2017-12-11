@@ -1,6 +1,6 @@
 <table class="table">
     <thead>
-        <th class="col-md-2">User</th>
+        <th class="col-md-2 text-center">User</th>
         <% for i in 1..@problems %>
             <th class="text-center">#<%= i %></th>
         <%end%>
@@ -9,9 +9,8 @@
     <tbody>
         <% @users.each do |user| %>
             <tr>
-                <td>
+                <td class="text-center">
                     <%= user['sid'].upcase%>
-                    <%= user['ac_count'] %>
                 </td>
                 <% user['ac'].each do |ac| %>
                     <% if ac==1 %>

@@ -2,6 +2,10 @@ module SessionsHelper
 
   # Logs in the given user.
   def log_in(user)
+    user.online = true
+    user.last_login = Time.now
+    user.ip = request.remote_ip
+    user.save()
     session[:user_id] = user.id
   end
 

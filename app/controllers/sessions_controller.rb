@@ -22,6 +22,9 @@ class SessionsController < ApplicationController
     end
   end
   def destroy
+    user = User.find(session[:user_id])
+    user.online = false
+    user.save()
     session.delete(:user_id)
     @current_user = nil
     redirect_to login_path

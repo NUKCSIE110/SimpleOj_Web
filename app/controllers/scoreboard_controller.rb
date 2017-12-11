@@ -21,6 +21,6 @@ class ScoreboardController < ApplicationController
       @users.push($user)
     end
     @users = @users.sort{|a, b| [b['ac_count'], b['score']] <=> [a['ac_count'], a['score']]}
-    puts @users
+    #puts @users
   end
 end

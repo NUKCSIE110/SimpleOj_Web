@@ -1,6 +1,6 @@
 $(document).on('ready turbolinks:load', function(){
   getTime();
-  setInterval(getTime, 60000);
+  setInterval(getTime, 300000);
   setInterval(updateTime, 1000);
 });
 
