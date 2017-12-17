@@ -57,4 +57,4 @@ gem "font-awesome-rails"
 gem "jquery-rails"
 gem 'turbolinks', '~>5'
 gem 'devise'
-gem 'redcarpet'
+gem 'pandoc-ruby'

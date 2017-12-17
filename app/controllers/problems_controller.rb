@@ -1,3 +1,4 @@
+require 'pandoc-ruby'
 class ProblemsController < ApplicationController
   before_action :require_login
   def index
@@ -24,7 +25,13 @@ class ProblemsController < ApplicationController
       return
     end
     @id = params[:id]
+    if !(/^\d$/ =~ @id)
+      render plain: "There is no problem."
+      return
+    end
     @problem = Problem.find(@id)
+    _content = File.read("#{Dir.pwd}/problemContents/p#{@id}.md")
+    @content = PandocRuby.convert(_content, :from => :markdown, :to => :html)
   end
 
 

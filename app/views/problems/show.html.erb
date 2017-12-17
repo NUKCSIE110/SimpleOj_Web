@@ -14,7 +14,7 @@
     </div>
 </div>
 <br>
-<%= render "p#{@id}" %>
+<%= render html: @content.html_safe %>
 <hr>
 <div class="row">
     <div class="col-md-2 col-md-offset-5">
