@@ -14,8 +14,8 @@ class JudgeController < ApplicationController
       @user.score -= 20
     elsif (@user.ac)>>(@qid)&1 != 1
       @user.score += ((exp_time.to_i-Time.now.utc.to_i)/60).floor
+      @user.ac |= 1<<(@qid)
     end
-    @user.ac |= 1<<(@qid)
     @user.save()
     render plain: "OK"
   end
