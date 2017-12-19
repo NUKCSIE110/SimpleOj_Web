@@ -2,7 +2,7 @@ require 'pandoc-ruby'
 class ProblemsController < ApplicationController
   before_action :require_login
   def index
-    if false
+    if true
       render 'close'
       return
     end
@@ -20,7 +20,7 @@ class ProblemsController < ApplicationController
   end
 
   def show
-    if false
+    if true
       render 'close'
       return
     end
